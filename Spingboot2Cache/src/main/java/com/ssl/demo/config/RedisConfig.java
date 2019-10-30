@@ -15,6 +15,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
+    /**
+     * watermelon
+     * @return
+     */
 
     @Bean
     public KeyGenerator keyGenerator() {
