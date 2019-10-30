@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 public class RedisConfig extends CachingConfigurerSupport {
     /**
      * watermelon
-     * @return
+     *
      */
 
     @Bean
@@ -29,6 +29,7 @@ public class RedisConfig extends CachingConfigurerSupport {
             for (Object object : objects) {
                 sb.append(object.toString());
             }
+            System.out.println("water");
             return sb.toString();
         };
     }
