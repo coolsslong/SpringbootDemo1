@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spingboot2Cache" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot2Redis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Springboot2StaticIOC" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringbootDemo1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringbootDemo2Mybatis" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringbootDemo2Spring_Data_JPA" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot2jdbc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot2rediscache" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

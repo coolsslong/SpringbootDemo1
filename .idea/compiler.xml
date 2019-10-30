@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot2jdbc" />
+        <module name="SpringbootDemo2Spring_Data_JPA" />
+        <module name="SpringbootDemo2Mybatis" />
+        <module name="Springboot2Redis" />
+        <module name="Spingboot2Cache" />
+        <module name="Springboot2StaticIOC" />
+        <module name="springboot2rediscache" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spingboot2Cache" target="1.8" />
+      <module name="springboot2jdbc" target="1.8" />
+      <module name="Springboot2Redis" target="1.8" />
+      <module name="springboot2rediscache" target="1.8" />
+      <module name="Springboot2StaticIOC" target="1.8" />
+      <module name="SpringbootDemo1" target="1.8" />
+      <module name="SpringbootDemo2Mybatis" target="1.8" />
+      <module name="SpringbootDemo2Spring_Data_JPA" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Spingboot2Cache" options="-parameters" />
+      <module name="Springboot2Redis" options="-parameters" />
+      <module name="Springboot2StaticIOC" options="-parameters" />
+      <module name="SpringbootDemo1" options="-parameters" />
+      <module name="SpringbootDemo2Mybatis" options="-parameters" />
+      <module name="SpringbootDemo2Spring_Data_JPA" options="-parameters" />
+      <module name="springboot2jdbc" options="-parameters" />
+      <module name="springboot2rediscache" options="-parameters" />
+    </option>
+  </component>
+</project>

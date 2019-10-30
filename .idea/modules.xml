@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo/Demo.iml" filepath="$PROJECT_DIR$/Demo/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spingboot2Cache/Spingboot2Cache.iml" filepath="$PROJECT_DIR$/Spingboot2Cache/Spingboot2Cache.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Springboot2Redis/Springboot2Redis.iml" filepath="$PROJECT_DIR$/Springboot2Redis/Springboot2Redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Springboot2StaticIOC/Springboot2StaticIOC.iml" filepath="$PROJECT_DIR$/Springboot2StaticIOC/Springboot2StaticIOC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringbootDemo.iml" filepath="$PROJECT_DIR$/SpringbootDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringbootDemo2Mybatis/SpringbootDemo2Mybatis.iml" filepath="$PROJECT_DIR$/SpringbootDemo2Mybatis/SpringbootDemo2Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringbootDemo2Spring_Data_JPA/SpringbootDemo2Spring_Data_JPA.iml" filepath="$PROJECT_DIR$/SpringbootDemo2Spring_Data_JPA/SpringbootDemo2Spring_Data_JPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot2jdbc/springboot2jdbc.iml" filepath="$PROJECT_DIR$/springboot2jdbc/springboot2jdbc.iml" />
+    </modules>
+  </component>
+</project>

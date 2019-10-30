@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssl.mapper.UserMapper">
+<!--    <cache eviction="缓存回收的策略,默认是LRU,最近最少使用的"
+           flushInterval="缓存多次时间清空，默认不清空"
+           readOnly="缓存是否只读，默认是false，会使用序列化返回对象，true直接返回对象的引用，不安全"
+           size="存放的元素量"
+           type="指定缓存的自定义//实现cache接口"></cache>-->
+    <resultMap id="BaseResultMap" type="com.ssl.model.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="passWord" property="passWord" jdbcType="VARCHAR"/>
+        <result column="user_sex" property="userSex" jdbcType="VARCHAR"/>
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
+    </resultMap>
+<!--    <resultMap id="MyEmp" type="com.ssl.model.Emp">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="gender" property="gender"/>
+        <result column="did" property="dept.id"/>
+        <result column="dept_name" property="dept.departmentNane"/>
+        &lt;!&ndash;property="指定哪个属性是联合的对象" javaType="指定这个属性对象的类型"&ndash;&gt;
+        <association property=" " javaType=" ">
+            <id column="did" property=""/>
+            <result column="dname" property=""/>
+        </association>
+        &lt;!&ndash; property是部门bean的emps集合属性，ofType是对应的集合元素类型&ndash;&gt;
+        <collection property="emps" ofType="com.ssl.model.Emp">
+            <id column="" property=""/>
+            <result column="" property=""/>
+        </collection>
+    </resultMap>-->
+    <!--配置复用的sql-->
+    <sql id="Base_Column_List">
+        id,userName,passWord,user_sex,nick_name
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap" useCache="" flushCache="">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM users1
+    </select>
+
+    <select id="getOne" parameterType="Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM users1
+        WHERE id=#{id}
+    </select>
+
+    <insert id="insert" parameterType="com.ssl.model.User"
+            useGeneratedKeys="true" keyProperty="id">
+        insert into users1(userName,passWord,user_sex)
+        values (#{userName},#{passWord},#{userSex})
+    </insert>
+
+    <update id="update" parameterType="com.ssl.model.User">
+        update
+        users1
+        <set>
+            <if test="userName!=null">userName=#{userName},</if>
+            <if test="passWord!=null">passWord=#{passWord}</if>
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="delete" parameterType="Long">
+<!--        <choose>
+            <when test=""></when>
+            <otherwise></otherwise>
+        </choose>
+        <foreach collection="ids" item="" separator="" open="(" close=")">
+        </foreach>-->
+        DELETE FROM
+        users1
+        where
+        id=#{id}
+    </delete>
+
+</mapper>
+
