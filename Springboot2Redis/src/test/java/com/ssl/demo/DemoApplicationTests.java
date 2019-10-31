@@ -4,6 +4,8 @@ import com.ssl.demo.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.*;
@@ -18,33 +20,39 @@ import java.util.concurrent.TimeUnit;
 public class DemoApplicationTests {
     @Autowired
     private RedisTemplate redisTemplate;
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testString() {
-        redisTemplate.opsForValue().set("jason", "manyHairs");
+        ValueOperations<String, String> valueOperations = redisTemplate.opsForValue();
+        valueOperations.set("jason", "manyHairs");
         Assert.assertEquals("manyHairs", redisTemplate.opsForValue().get("jason"));
+        System.out.println(valueOperations.get("jason"));
+        logger.info("water");
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testObj() {
         User user = new User("jason", "123456", "male", "xx");
         ValueOperations<String, User> operations = redisTemplate.opsForValue();
         operations.set("demo", user);
         User user1 = operations.get("demo");
-        System.out.println(user1.toString());
+        System.out.println(user1 == null ? 1 : 2);
     }
 
     @Test
-    /**
+    /*
      * 测试超时失效
      */
+    @SuppressWarnings("unchecked")
     public void testExpire() throws InterruptedException {
         User user = new User("jason", "123456", "male", "xx");
         ValueOperations<String, User> operations = redisTemplate.opsForValue();
         operations.set("jason", user, 100, TimeUnit.MICROSECONDS);
         Thread.sleep(1000);
-        boolean exists = redisTemplate.hasKey("jason");
-        if (exists) {
+        if (redisTemplate.hasKey("jason") != null) {
             System.out.println("exists is true");
         } else {
             System.out.println("exists is false");
@@ -52,6 +60,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testHashSet() {
         HashOperations<String, Object, Object> hashOperations = redisTemplate.opsForHash();
         hashOperations.put("key", "field", "value");
@@ -60,6 +69,7 @@ public class DemoApplicationTests {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testList() {
         ListOperations<String, String> listOperations = redisTemplate.opsForList();
         listOperations.rightPush("1", "yi");
@@ -68,12 +78,15 @@ public class DemoApplicationTests {
         //String value = listOperations.leftPop("1");
         //System.out.println(value);
         List<String> list = listOperations.range("1", 1, 3);
-        for (String s : list) {
-            System.out.println("list:" + s);
+        if (list != null) {
+            for (String s : list) {
+                System.out.println("list:" + s);
+            }
         }
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void testSet() {
         String key = "set";
         SetOperations<String, String> setOperations = redisTemplate.opsForSet();
@@ -83,8 +96,10 @@ public class DemoApplicationTests {
         setOperations.add(key, "130");
         Set<String> values = setOperations.members(key);
         //redisTemplate.delete(key);
-        for (String value : values) {
-            System.out.println("set:" + value);
+        if (values != null) {
+            for (String value : values) {
+                System.out.println("set:" + value);
+            }
         }
     }
 }

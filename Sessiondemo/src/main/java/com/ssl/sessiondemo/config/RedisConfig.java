@@ -1,4 +1,4 @@
-package com.ssl.demo.config;
+package com.ssl.sessiondemo.config;
 
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -15,6 +15,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableCaching
 public class RedisConfig extends CachingConfigurerSupport {
+    /**
+     * watermelon
+     *
+     */
 
     @Bean
     public KeyGenerator keyGenerator() {
@@ -25,7 +29,8 @@ public class RedisConfig extends CachingConfigurerSupport {
             for (Object object : objects) {
                 sb.append(object.toString());
             }
-            return sb.toString();
+            System.out.println("water");
+            return "water";
         };
     }
 }
