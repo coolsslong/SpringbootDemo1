@@ -36,7 +36,7 @@
         id,userName,passWord,user_sex,nick_name
     </sql>
 
-    <select id="getAll" resultMap="BaseResultMap" useCache="" flushCache="">
+    <select id="getAll" resultMap="BaseResultMap" >
         SELECT
         <include refid="Base_Column_List"/>
         FROM users1
